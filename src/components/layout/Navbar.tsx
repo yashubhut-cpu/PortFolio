@@ -4,6 +4,7 @@ import { Sun, Moon, Menu, X, ArrowUpRight } from 'lucide-react';
 import { NAV_ITEMS } from '../../constants/navigation';
 import { profileData } from '../../data/profile';
 import { Button } from '../common/Button';
+import { Logo } from '../common/Logo';
 
 interface NavbarProps {
   theme: 'dark' | 'light';
@@ -68,24 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onOpenHireMo
   return (
     <header className="sticky top-0 z-40 w-full bg-[#fefae0]/90 dark:bg-[#121220]/95 backdrop-blur-md border-b-2 border-black dark:border-[#e85d04] transition-colors duration-300">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-8 h-18 sm:h-20 flex items-center justify-between">
-        {/* Brand Logo matching The Locale */}
-        <a
-          href="#"
-          title="Yash Bhut — Full-Stack Software Engineer & Technology Architect Home"
-          aria-label="Yash Bhut Homepage"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="group flex items-center gap-2 select-none"
-        >
-          <span className="font-montserrat text-xl sm:text-2xl font-black tracking-tighter uppercase text-[#1a1a2e] dark:text-white">
-            YASH BHUT
-          </span>
-          <span className="bg-[#e85d04] text-black font-montserrat text-[10px] font-black uppercase px-2 py-0.5 border border-black rounded-xs shadow-[1px_1px_0px_#000]">
-            SURAT
-          </span>
-        </a>
+        {/* Brand Logo */}
+        <Logo size="sm" />
 
         {/* Desktop Nav Items */}
         <nav aria-label="Primary Navigation" className="hidden lg:flex items-center gap-4 xl:gap-6">

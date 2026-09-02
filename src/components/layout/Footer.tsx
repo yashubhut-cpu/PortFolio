@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, Instagram, ArrowUp } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { SitemapFooter } from './SitemapFooter';
+import { Logo } from '../common/Logo';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -17,10 +18,8 @@ export const Footer: React.FC = () => {
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-black/10 dark:border-white/10 text-center md:text-left">
           {/* Brand Info */}
-          <div className="space-y-1">
-            <h3 className="font-montserrat text-lg font-black uppercase text-[#1a1a2e] dark:text-[#e85d04]">
-              {profileData.name}
-            </h3>
+          <div className="space-y-2 flex flex-col items-center md:items-start">
+            <Logo size="sm" />
             <p className="font-plus-jakarta text-xs text-stone-700 dark:text-stone-400 max-w-md">
               Full-Stack Software Engineer specializing in MERN stack, Next.js, real-time engines, and scalable web apps.
             </p>
