@@ -12,7 +12,7 @@ export const profileData: Profile = {
   email: 'yashubhut@gmail.com',
   github: 'https://github.com/yashubhut-cpu',
   linkedin: 'https://www.linkedin.com/in/yash-bhut/',
-  website: 'https://www.instagram.com/mr._yash_bhut/',
+  website: 'https://yashbhut.in',
   yearsExperience: 3,
   completedProjects: 24,
   codeCommits: 1450,

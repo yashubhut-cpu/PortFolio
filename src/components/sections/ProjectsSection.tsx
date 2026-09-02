@@ -19,22 +19,31 @@ export const ProjectsSection: React.FC = () => {
       : projectsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] border-t-2 border-black dark:border-[#e85d04] transition-colors duration-300">
+    <section
+      id="projects"
+      aria-labelledby="projects-heading"
+      className="py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] border-t-2 border-black dark:border-[#e85d04] transition-colors duration-300"
+    >
       <div className="max-w-[#1280px] mx-auto px-4 sm:px-10">
         {/* Section Header */}
-        <SectionHeading
-          badgeText="Featured Portfolios & Engines"
-          badgeVariant="orange"
-          title="Featured IT Projects & Codebases"
-          subtitle="Explore full-stack web applications, low-latency WebSocket gaming engines, transparent donation protocols, and AI developer utilities."
-        />
+        <div id="projects-heading">
+          <SectionHeading
+            badgeText="Featured Portfolios & Engines"
+            badgeVariant="orange"
+            title="Featured IT Projects & Codebases"
+            subtitle="Explore full-stack web applications, low-latency WebSocket gaming engines, transparent donation protocols, and AI developer utilities."
+          />
+        </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10" role="tablist" aria-label="Project Categories">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
+              role="tab"
+              aria-selected={selectedCategory === cat}
+              title={`Filter projects by ${cat}`}
               className={`font-space-grotesk text-xs uppercase font-extrabold px-4 py-2 border-2 border-black dark:border-[#e85d04] rounded-xs transition-all cursor-pointer select-none ${
                 selectedCategory === cat
                   ? 'bg-[#e85d04] text-black shadow-[2px_2px_0px_#000]'
@@ -49,14 +58,14 @@ export const ProjectsSection: React.FC = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div
+            <article
               key={project.id}
               className="group border-3 border-black dark:border-[#e85d04] bg-white dark:bg-[#16213e] neobrutal-shadow flex flex-col justify-between overflow-hidden rounded-xs transition-all hover:-translate-y-1.5"
             >
               {/* Project Image Header with Fallback */}
               <ProjectCardImage
                 src={project.image}
-                alt={project.title}
+                alt={`${project.title} — ${project.techStack.slice(0, 3).join(', ')}`}
                 category={project.category}
                 projectId={project.id}
               />
@@ -88,6 +97,8 @@ export const ProjectsSection: React.FC = () => {
                 <div className="pt-4 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between gap-2">
                   <button
                     onClick={() => setSelectedProject(project)}
+                    aria-label={`View technical architecture details for ${project.title}`}
+                    title={`View technical details for ${project.title}`}
                     className="font-space-grotesk text-xs uppercase font-extrabold text-[#e85d04] hover:underline cursor-pointer flex items-center gap-1"
                   >
                     <span>Details</span>
@@ -101,7 +112,8 @@ export const ProjectsSection: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 border border-black dark:border-white/20 bg-stone-100 dark:bg-stone-800 hover:bg-[#e85d04] hover:text-black rounded-xs transition-colors"
-                        aria-label="GitHub Codebase"
+                        aria-label={`View GitHub repository for ${project.title}`}
+                        title={`GitHub Repository: ${project.title}`}
                       >
                         <Github size={14} />
                       </a>
@@ -112,7 +124,8 @@ export const ProjectsSection: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 border border-black dark:border-white/20 bg-stone-100 dark:bg-stone-800 hover:bg-[#0d9488] hover:text-white rounded-xs transition-colors"
-                        aria-label="Live Demo"
+                        aria-label={`Launch live project demo for ${project.title}`}
+                        title={`Live Project Demo: ${project.title}`}
                       >
                         <ExternalLink size={14} />
                       </a>
@@ -120,7 +133,7 @@ export const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

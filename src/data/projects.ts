@@ -9,7 +9,7 @@ export const projectsData: Project[] = [
     fullDesc: 'GamBles is an end-to-end interactive real-time gaming engine capable of handling high-frequency state updates, live payout calculations, and seamless concurrency. Engineered with WebSockets for sub-50ms synchronization and Redis pub/sub for instant state distribution.',
     techStack: ['Next.js', 'React', 'Node.js', 'WebSockets', 'Redis', 'Tailwind CSS', 'TypeScript'],
     githubUrl: 'https://github.com/yashubhut-cpu/GamBles',
-    liveUrl: 'https://gambles-demo.yashh1524.com',
+    liveUrl: 'https://gambles-demo.yashbhut.in',
     featured: true,
     metrics: [
       { label: 'Latency', value: '<45ms' },
@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
     fullDesc: 'GiveWithTrust eliminates opacity in non-profit donations by introducing transparent audit trails, milestone-based fund release, and verified photo proof of disbursements for donors.',
     techStack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
     githubUrl: 'https://github.com/yashubhut-cpu/GiveWithTrust',
-    liveUrl: 'https://givewithtrust.yashh1524.com',
+    liveUrl: 'https://givewithtrust.yashbhut.in',
     featured: true,
     metrics: [
       { label: 'Tracked Funds', value: '$250K+' },
@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
     fullDesc: 'CodePulse hooks into GitHub pull requests to automatically analyze code diffs, flag potential SQL injection or memory leak patterns, and suggest optimized TypeScript refactors.',
     techStack: ['Python', 'FastAPI', 'TypeScript', 'Gemini API', 'Docker', 'GitHub Actions'],
     githubUrl: 'https://github.com/yashubhut-cpu',
-    liveUrl: 'https://codepulse.yashh1524.com',
+    liveUrl: 'https://codepulse.yashbhut.in',
     featured: false,
     metrics: [
       { label: 'PRs Scanned', value: '2,400+' },
@@ -100,7 +100,7 @@ export const projectsData: Project[] = [
     fullDesc: 'VividPulse is a high-performance developer dashboard for visualizing Prometheus metrics, API error rates, and cluster health in real time.',
     techStack: ['React', 'TypeScript', 'Chart.js', 'Node.js', 'Express', 'Tailwind CSS'],
     githubUrl: 'https://github.com/yashubhut-cpu',
-    liveUrl: 'https://vividpulse.yashh1524.com',
+    liveUrl: 'https://vividpulse.yashbhut.in',
     featured: false,
     metrics: [
       { label: 'GitHub Stars', value: '180+' },

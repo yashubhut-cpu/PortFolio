@@ -71,6 +71,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onOpenHireMo
         {/* Brand Logo matching The Locale */}
         <a
           href="#"
+          title="Yash Bhut — Full-Stack Software Engineer & Technology Architect Home"
+          aria-label="Yash Bhut Homepage"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -86,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onOpenHireMo
         </a>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+        <nav aria-label="Primary Navigation" className="hidden lg:flex items-center gap-4 xl:gap-6">
           {NAV_ITEMS.map((item) => {
             const itemKey = item.href.replace('#', '');
             const isActive = activeSection === itemKey;
@@ -95,6 +97,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme, onOpenHireMo
               <a
                 key={item.href}
                 href={item.href}
+                title={`Navigate to ${item.label} section`}
+                aria-label={item.label}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={`relative px-3.5 py-1.5 font-space-grotesk text-xs uppercase font-extrabold transition-all select-none ${
                   isActive

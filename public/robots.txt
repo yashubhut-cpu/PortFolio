@@ -1,0 +1,6 @@
+# robots.txt for Yash Bhut Portfolio (https://yashbhut.in)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yashbhut.in/sitemap.xml

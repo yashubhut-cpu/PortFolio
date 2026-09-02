@@ -23,12 +23,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreServices, onO
   }, []);
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-5rem)] overflow-hidden flex items-center py-12 sm:py-20 text-[#1a1a2e] dark:text-white transition-colors duration-300">
+    <section
+      aria-labelledby="hero-heading"
+      className="relative w-full min-h-[calc(100vh-5rem)] overflow-hidden flex items-center py-12 sm:py-20 text-[#1a1a2e] dark:text-white transition-colors duration-300"
+    >
       {/* High-Resolution Surat City & Bridge Skyline Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=1920&auto=format&fit=crop"
-          alt="Surat City Skyline & Bridge"
+          alt="Surat City Skyline & Bridge — Yash Bhut Full-Stack Development Hub"
+          width="1920"
+          height="1080"
+          loading="eager"
+          decoding="async"
+          // @ts-ignore
+          fetchpriority="high"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark/Light Gradient Overlay */}
@@ -47,31 +56,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreServices, onO
               </span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main H1 Headline */}
             <div className="space-y-2">
-              <h1 className="font-montserrat text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2e] dark:text-white leading-[1.15]">
+              <h1
+                id="hero-heading"
+                className="font-montserrat text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2e] dark:text-white leading-[1.15]"
+              >
                 <span className="bg-[#e85d04] text-black px-3 py-1 border-2 border-black inline-block transform -rotate-1 rounded-xs shadow-[3px_3px_0px_#000] mr-2">
                   Yash Bhut
                 </span>
-                Surat — India's Best
+                Full-Stack Software Engineer &amp; Technology Architect
               </h1>
 
               {/* Acronym highlight */}
-              <div className="font-montserrat text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#1a1a2e] dark:text-white leading-[1.15] flex flex-wrap items-center gap-3 pt-1">
-                <span>Spot</span>
+              <div className="font-montserrat text-2xl min-[380px]:text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#1a1a2e] dark:text-white leading-[1.15] flex flex-wrap items-center gap-3 pt-1">
+                <span className="text-stone-700 dark:text-stone-300">Surat's Premier Spot for</span>
                 <span className="bg-[#e85d04] text-black px-3 py-0.5 border-2 border-black inline-block font-black shadow-[3px_3px_0px_#000]">
-                  {acronyms[acronymIndex].text}
+                  {acronyms[acronymIndex].text} ({acronyms[acronymIndex].label})
                 </span>
               </div>
             </div>
 
             {/* Subtitle Bio */}
             <p className="font-plus-jakarta text-sm sm:text-lg text-stone-700 dark:text-stone-200 max-w-2xl leading-relaxed">
-              Yash Bhut is Surat's full-stack software engineer & technology architect. Yash maps real-time web engines, aesthetic full-stack web applications, and low-latency microservices across Surat, Vesu, Adajan, VIP Road, and global remote setups.
+              Yash Bhut is Surat's full-stack software engineer &amp; technology architect. Yash maps real-time web engines, aesthetic full-stack web applications, and low-latency microservices across Surat, Vesu, Adajan, VIP Road, and global remote setups.
             </p>
           </div>
 
-          {/* Right Column: Glassmorphism Card & Action Buttons matching The Locale */}
+          {/* Right Column: Glassmorphism Card & Action Buttons */}
           <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
             <div className="w-full max-w-full sm:max-w-[26rem] space-y-4">
               {/* Right Card */}
@@ -87,10 +99,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreServices, onO
                 </p>
               </div>
 
-              {/* Action Buttons Grid matching The Locale */}
+              {/* Action Buttons Grid */}
               <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 w-full">
                 <button
                   onClick={onExploreServices}
+                  aria-label="Explore Full-Stack Engineering Services by Yash Bhut"
+                  title="Explore Full-Stack Engineering Services"
                   className="w-full bg-[#e85d04] hover:bg-[#fb923c] text-black font-space-grotesk text-xs uppercase font-black py-4 px-4 border-2 border-black shadow-[3px_3px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] transition-all flex items-center justify-center gap-2 cursor-pointer text-center leading-tight"
                 >
                   <span>EXPLORE OUR SERVICES</span>
@@ -99,6 +113,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreServices, onO
 
                 <button
                   onClick={onOpenDemo}
+                  aria-label="Watch Yash Bhut Interactive Mobile Code Metrics Demo"
+                  title="Watch Mobile Code Demo"
                   className="w-full bg-[#1a1a2e] hover:bg-[#252542] text-white dark:bg-[#16213e] dark:hover:bg-[#202d54] border-2 border-black dark:border-[#e85d04] shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#e85d04] font-space-grotesk text-xs uppercase font-black py-4 px-4 hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] transition-all flex items-center justify-center gap-2 cursor-pointer text-center leading-tight"
                 >
                   <span>WATCH MOBILE DEMO</span>

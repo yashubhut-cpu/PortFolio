@@ -33,7 +33,8 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-white dark:bg-[#16213e] hover:bg-[#e85d04] text-[#1a1a2e] dark:text-white hover:text-black border-2 border-black dark:border-white/20 rounded-xs transition-colors cursor-pointer shadow-[2px_2px_0px_#000] dark:shadow-none"
-              aria-label="GitHub Profile"
+              aria-label="Yash Bhut GitHub Profile (@yashubhut-cpu)"
+              title="Yash Bhut GitHub Profile"
             >
               <Github size={18} />
             </a>
@@ -42,14 +43,16 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-white dark:bg-[#16213e] hover:bg-[#e85d04] text-[#1a1a2e] dark:text-white hover:text-black border-2 border-black dark:border-white/20 rounded-xs transition-colors cursor-pointer shadow-[2px_2px_0px_#000] dark:shadow-none"
-              aria-label="LinkedIn Profile"
+              aria-label="Yash Bhut LinkedIn Profile"
+              title="Yash Bhut LinkedIn Profile"
             >
               <Linkedin size={18} />
             </a>
             <a
               href={`mailto:${profileData.email}`}
               className="p-2.5 bg-white dark:bg-[#16213e] hover:bg-[#e85d04] text-[#1a1a2e] dark:text-white hover:text-black border-2 border-black dark:border-white/20 rounded-xs transition-colors cursor-pointer shadow-[2px_2px_0px_#000] dark:shadow-none"
-              aria-label="Email Me"
+              aria-label="Email Yash Bhut (yashubhut@gmail.com)"
+              title="Email Yash Bhut"
             >
               <Mail size={18} />
             </a>
@@ -58,7 +61,8 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-white dark:bg-[#16213e] hover:bg-[#e85d04] text-[#1a1a2e] dark:text-white hover:text-black border-2 border-black dark:border-white/20 rounded-xs transition-colors cursor-pointer shadow-[2px_2px_0px_#000] dark:shadow-none"
-              aria-label="Instagram Profile"
+              aria-label="Yash Bhut Instagram Profile"
+              title="Yash Bhut Instagram Profile"
             >
               <Instagram size={18} />
             </a>
@@ -67,6 +71,8 @@ export const Footer: React.FC = () => {
           {/* Scroll to top button */}
           <button
             onClick={scrollToTop}
+            aria-label="Scroll back to top of page"
+            title="Back to Top"
             className="flex items-center gap-2 bg-[#e85d04] hover:bg-[#fb923c] text-black font-space-grotesk text-xs uppercase font-extrabold px-4 py-2 border border-black shadow-[2px_2px_0px_#000] cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
           >
             <span>Back To Top</span>

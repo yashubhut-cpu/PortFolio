@@ -60,6 +60,10 @@ export const ProjectCardImage: React.FC<ProjectCardImageProps> = ({
         <img
           src={src}
           alt={alt}
+          width="800"
+          height="450"
+          loading="lazy"
+          decoding="async"
           onError={() => setHasError(true)}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

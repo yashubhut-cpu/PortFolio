@@ -14,14 +14,21 @@ export const SolutionsShowcase: React.FC<SolutionsShowcaseProps> = ({ onOpenHire
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
-    <section id="services" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] border-y-2 border-black dark:border-[#e85d04] transition-colors duration-300">
+    <section
+      id="services"
+      aria-labelledby="solutions-heading"
+      className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] border-y-2 border-black dark:border-[#e85d04] transition-colors duration-300"
+    >
       <div className="max-w-[#1280px] mx-auto w-full px-4 sm:px-10 space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-center justify-center text-center space-y-3 mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 border-2 border-rose-600 bg-rose-50 text-rose-600 dark:bg-rose-950/20 dark:text-rose-400 dark:border-rose-400 px-3 py-1 font-space-grotesk text-[10px] sm:text-xs tracking-wider uppercase font-black rounded-xs shadow-[2px_2px_0px_#000]">
             Meeting Diverse Tech Needs
           </div>
-          <h2 className="font-montserrat text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-[#1a1a2e] dark:text-[#e85d04] tracking-tight leading-none pt-2 text-center">
+          <h2
+            id="solutions-heading"
+            className="font-montserrat text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-[#1a1a2e] dark:text-[#e85d04] tracking-tight leading-none pt-2 text-center"
+          >
             What My IT Solutions Can Do For You
           </h2>
           <p className="font-plus-jakarta text-xs sm:text-sm text-stone-700 dark:text-stone-300 max-w-xl mx-auto leading-relaxed">

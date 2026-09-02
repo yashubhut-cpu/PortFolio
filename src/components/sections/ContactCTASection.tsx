@@ -30,12 +30,19 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-[#fefae0] dark:bg-[#1a1a2e] transition-colors duration-300">
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="py-12 sm:py-16 bg-[#fefae0] dark:bg-[#1a1a2e] transition-colors duration-300"
+    >
       <div className="max-w-[#1280px] mx-auto px-4 sm:px-10">
         {/* High-impact Banner Card */}
         <div className="bg-white dark:bg-[#16213e] text-[#1a1a2e] dark:text-white p-6 sm:p-12 md:p-16 border-4 border-black dark:border-[#e85d04] neobrutal-shadow-lg relative overflow-hidden rounded-xs">
           <div className="relative z-10 max-w-3xl space-y-6">
-            <h2 className="font-montserrat text-2xl min-[360px]:text-3xl sm:text-4xl md:text-5xl leading-tight font-black tracking-tight uppercase text-[#1a1a2e] dark:text-white">
+            <h2
+              id="contact-heading"
+              className="font-montserrat text-2xl min-[360px]:text-3xl sm:text-4xl md:text-5xl leading-tight font-black tracking-tight uppercase text-[#1a1a2e] dark:text-white"
+            >
               Ready to Build Your Next Web Application or Hire Yash Bhut?
             </h2>
             <p className="font-plus-jakarta text-sm sm:text-lg text-stone-700 dark:text-stone-300 max-w-2xl leading-relaxed">
@@ -45,12 +52,15 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2">
               <button
                 onClick={onOpenModal}
+                aria-label="Open contact form to hire Yash Bhut"
+                title="Get in Touch with Yash Bhut"
                 className="w-full sm:w-auto bg-[#e85d04] hover:bg-[#fb923c] text-black px-8 sm:px-10 py-4 sm:py-5 border-2 border-black font-space-grotesk text-sm uppercase font-extrabold cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] transition-all shadow-[3px_3px_0px_#000] text-center"
               >
                 Get in Touch
               </button>
               <a
                 href="#projects"
+                title="Browse Yash Bhut's Featured Projects"
                 className="w-full sm:w-auto bg-stone-100 dark:bg-transparent border-2 border-black dark:border-white hover:bg-stone-200 dark:hover:bg-white/10 text-[#1a1a2e] dark:text-white px-8 sm:px-10 py-4 sm:py-5 font-space-grotesk text-sm uppercase font-bold cursor-pointer text-center shadow-[2px_2px_0px_#000] dark:shadow-none"
               >
                 Browse Projects
@@ -80,10 +90,11 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
+                <label htmlFor="contact-name" className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
                   Your Name
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   required
                   value={formData.name}
@@ -94,10 +105,11 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
               </div>
 
               <div className="space-y-1">
-                <label className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
+                <label htmlFor="contact-email" className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
                   Email Address
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   required
                   value={formData.email}
@@ -108,10 +120,11 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
               </div>
 
               <div className="space-y-1">
-                <label className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
+                <label htmlFor="contact-role" className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
                   Inquiry Type
                 </label>
                 <select
+                  id="contact-role"
                   value={formData.roleType}
                   onChange={(e) => setFormData({ ...formData, roleType: e.target.value })}
                   className="w-full p-2.5 bg-white dark:bg-stone-800 border-2 border-black dark:border-stone-700 rounded-xs font-plus-jakarta text-xs text-[#1a1a2e] dark:text-white focus:outline-none focus:border-[#e85d04]"
@@ -124,10 +137,11 @@ export const ContactCTASection: React.FC<ContactCTASectionProps> = ({
               </div>
 
               <div className="space-y-1">
-                <label className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
+                <label htmlFor="contact-message" className="font-space-grotesk text-xs uppercase font-extrabold block text-[#1a1a2e] dark:text-stone-200">
                   Message / Details
                 </label>
                 <textarea
+                  id="contact-message"
                   rows={4}
                   required
                   value={formData.message}

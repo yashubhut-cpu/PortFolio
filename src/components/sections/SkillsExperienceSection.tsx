@@ -6,16 +6,22 @@ import { SectionHeading } from '../common/SectionHeading';
 
 export const SkillsExperienceSection: React.FC = () => {
   return (
-    <section id="skills" className="py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] text-[#1a1a2e] dark:text-white border-y-3 border-black dark:border-[#e85d04] transition-colors duration-300">
+    <section
+      id="skills"
+      aria-labelledby="skills-heading"
+      className="py-16 sm:py-24 bg-[#fefae0] dark:bg-[#1a1a2e] text-[#1a1a2e] dark:text-white border-y-3 border-black dark:border-[#e85d04] transition-colors duration-300"
+    >
       <div className="max-w-[#1280px] mx-auto px-4 sm:px-10 space-y-16">
         {/* Skills Section */}
         <div className="space-y-12">
-          <SectionHeading
-            badgeText="Engineering Matrix"
-            badgeVariant="teal"
-            title="Technical Skills & Stack Proficiency"
-            subtitle="Full-stack toolkit spanning modern frontend frameworks, real-time backend architecture, cloud databases, and DevOps automation."
-          />
+          <div id="skills-heading">
+            <SectionHeading
+              badgeText="Engineering Matrix"
+              badgeVariant="teal"
+              title="Technical Skills & Stack Proficiency"
+              subtitle="Full-stack toolkit spanning modern frontend frameworks, real-time backend architecture, cloud databases, and DevOps automation."
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {skillsData.map((category, idx) => (
@@ -58,17 +64,19 @@ export const SkillsExperienceSection: React.FC = () => {
         </div>
 
         {/* Experience Section */}
-        <div id="experience" className="pt-12 border-t-2 border-black dark:border-[#e85d04]/30 space-y-12">
-          <SectionHeading
-            badgeText="Career History"
-            badgeVariant="orange"
-            title="Professional Experience"
-            subtitle="Building full-stack web applications, low-latency microservices, and client digital products."
-          />
+        <div id="experience" aria-labelledby="experience-heading" className="pt-12 border-t-2 border-black dark:border-[#e85d04]/30 space-y-12">
+          <div id="experience-heading">
+            <SectionHeading
+              badgeText="Career History"
+              badgeVariant="orange"
+              title="Professional Experience"
+              subtitle="Building full-stack web applications, low-latency microservices, and client digital products."
+            />
+          </div>
 
           <div className="relative border-l-2 border-[#e85d04] ml-2 sm:ml-4 pl-6 sm:pl-8 space-y-10">
             {experienceData.map((exp) => (
-              <div key={exp.id} className="relative group">
+              <article key={exp.id} className="relative group">
                 {/* Timeline Dot */}
                 <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full border-2 border-black bg-[#e85d04] shadow-[1px_1px_0px_#000]" />
 
@@ -84,10 +92,10 @@ export const SkillsExperienceSection: React.FC = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-3 text-xs font-space-grotesk text-stone-600 dark:text-stone-400">
-                      <span className="flex items-center gap-1 bg-stone-100 dark:bg-[#1a1a2e] px-2.5 py-1 border border-stone-300 dark:border-white/10 rounded-xs">
+                      <time className="flex items-center gap-1 bg-stone-100 dark:bg-[#1a1a2e] px-2.5 py-1 border border-stone-300 dark:border-white/10 rounded-xs">
                         <Calendar size={12} className="text-[#e85d04]" />
                         {exp.period}
-                      </span>
+                      </time>
                       <span className="flex items-center gap-1 bg-stone-100 dark:bg-[#1a1a2e] px-2.5 py-1 border border-stone-300 dark:border-white/10 rounded-xs">
                         <MapPin size={12} className="text-[#0d9488]" />
                         {exp.location}
@@ -121,7 +129,7 @@ export const SkillsExperienceSection: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
