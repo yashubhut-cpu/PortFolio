@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+
+@layer theme {
+  :root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+
+    /* Light Theme Design Tokens */
+    --color-bg-main: #fefae0;
+    --color-bg-card: #ffffff;
+    --color-bg-secondary: #f4f2e6;
+    --color-text-primary: #1a1a2e;
+    --color-text-secondary: #4a5568;
+    --color-text-muted: #718096;
+    --color-border-primary: #000000;
+    --color-shadow-primary: #000000;
+    --color-accent-orange: #e85d04;
+    --color-accent-teal: #0d9488;
+    --color-accent-emerald: #059669;
+  }
+
+  .dark {
+    /* Dark Theme Design Tokens */
+    --color-bg-main: #1a1a2e;
+    --color-bg-card: #16213e;
+    --color-bg-secondary: #0f172a;
+    --color-text-primary: #fdf8f8;
+    --color-text-secondary: #cbd5e1;
+    --color-text-muted: #94a3b8;
+    --color-border-primary: #e85d04;
+    --color-shadow-primary: #e85d04;
+    --color-accent-orange: #e85d04;
+    --color-accent-teal: #0d9488;
+    --color-accent-emerald: #00bb7f;
+  }
+}
+
+/* Custom Neo-brutalist Utility Classes */
+@layer utilities {
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-plus-jakarta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Theme surface token helpers */
+  .bg-theme-main {
+    background-color: var(--color-bg-main);
+  }
+  .bg-theme-card {
+    background-color: var(--color-bg-card);
+  }
+  .bg-theme-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+  .text-theme-primary {
+    color: var(--color-text-primary);
+  }
+  .text-theme-secondary {
+    color: var(--color-text-secondary);
+  }
+  .text-theme-muted {
+    color: var(--color-text-muted);
+  }
+  .border-theme {
+    border-color: var(--color-border-primary);
+  }
+
+  /* Solid Hard Shadows */
+  .neobrutal-shadow {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .dark .neobrutal-shadow {
+    box-shadow: 4px 4px 0px 0px #e85d04;
+  }
+  .neobrutal-shadow-lg {
+    box-shadow: 6px 6px 0px 0px #000000;
+  }
+  .dark .neobrutal-shadow-lg {
+    box-shadow: 6px 6px 0px 0px #e85d04;
+  }
+  .neobrutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #000000;
+  }
+  .dark .neobrutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #e85d04;
+  }
+  .neobrutal-shadow-blue {
+    box-shadow: 4px 4px 0px 0px rgba(34, 79, 213, 0.85);
+  }
+  .neobrutal-shadow-orange {
+    box-shadow: 4px 4px 0px 0px #e85d04;
+  }
+  .neobrutal-shadow-teal {
+    box-shadow: 4px 4px 0px 0px #0d9488;
+  }
+  .neobrutal-shadow-white {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+
+  /* Tactile Press Effect */
+  .active-press {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .active-press:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px #000000 !important;
+  }
+
+  /* Custom Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scanline {
+    0% {
+      top: 0%;
+    }
+    50% {
+      top: 90%;
+    }
+    100% {
+      top: 0%;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 25s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-scanline {
+    animation: scanline 2s ease-in-out infinite;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+  background: #e85d04;
+  border-radius: 2px;
+  border: 1px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fb923c;
+}
